@@ -1,7 +1,7 @@
 from pathlib import Path
 
 # Create a README.md file and write the content into it
-readme_content = """
+
 # Assignment 2: Backend with NodeJS, Express, MongoDB & Frontend with ReactJS
 
 ## Table of Contents
