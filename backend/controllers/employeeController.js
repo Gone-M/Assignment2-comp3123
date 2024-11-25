@@ -11,15 +11,14 @@ exports.createEmployee = async (req, res) => {
 
 exports.getEmployees = async (req, res) => {
   try {
-    const employees = await Employee.find(); // Tüm çalışanları veritabanından al
-    res.json(employees); // JSON olarak geri gönder
+    const employees = await Employee.find();
+    res.json(employees);
   } catch (err) {
     console.error('Error fetching employees:', err);
     res.status(500).json({ error: 'Failed to fetch employees' });
   }
 };
 
-// ID'ye göre çalışan getir
 exports.getEmployeeById = async (req, res) => {
   try {
     const employee = await Employee.findById(req.params.id);
@@ -32,7 +31,6 @@ exports.getEmployeeById = async (req, res) => {
   }
 };
 
-// Çalışan güncelle
 exports.updateEmployee = async (req, res) => {
   try {
     const employee = await Employee.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -45,7 +43,6 @@ exports.updateEmployee = async (req, res) => {
   }
 };
 
-// Çalışan sil
 exports.deleteEmployee = async (req, res) => {
   try {
     const employee = await Employee.findByIdAndDelete(req.params.id);
@@ -58,7 +55,6 @@ exports.deleteEmployee = async (req, res) => {
   }
 };
 
-// Çalışanları filtrele
 exports.searchEmployees = async (req, res) => {
   const filters = {};
   if (req.query.department) filters.department = req.query.department;

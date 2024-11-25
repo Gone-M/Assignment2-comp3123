@@ -1,18 +1,13 @@
 FROM node:16
 
-# Çalışma dizinini ayarla
 WORKDIR /app
 
-# package.json ve package-lock.json dosyalarını kopyala
 COPY package*.json ./
 
-# Bağımlılıkları yükle
 RUN npm install
 
-# Tüm proje dosyalarını kopyala (public ve src dahil)
 COPY . .
 
-# React uygulamasını başlat
 CMD ["npm", "start"]
 
 EXPOSE 3000

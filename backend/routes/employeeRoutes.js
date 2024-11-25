@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.post('/', createEmployee);
 router.get('/', getEmployees);
-router.get('/search', searchEmployees); // /search önce tanımlanmalı
+router.get('/search', searchEmployees);
 router.get('/:id', getEmployeeById);
 router.put('/:id', updateEmployee);
 router.delete('/:id', deleteEmployee);

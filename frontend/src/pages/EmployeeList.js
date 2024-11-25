@@ -22,19 +22,17 @@ function EmployeeList() {
   const [searchPosition, setSearchPosition] = useState('');
   const navigate = useNavigate();
 
-  // Fetch employees from backend
   const fetchEmployees = async () => {
     try {
       const response = await axios.get('http://localhost:5001/api/employees');
       setEmployees(response.data);
-      setFilteredEmployees(response.data); // Update filtered list
+      setFilteredEmployees(response.data);
     } catch (error) {
       console.error('Error fetching employees:', error);
       alert('Failed to fetch employees');
     }
   };
 
-  // Delete employee
   const deleteEmployee = async (id) => {
     try {
       await axios.delete(`http://localhost:5001/api/employees/${id}`);
@@ -46,7 +44,6 @@ function EmployeeList() {
     }
   };
 
-  // Search employees
   const handleSearch = () => {
     let filtered = employees;
     if (searchDepartment) {
@@ -62,7 +59,6 @@ function EmployeeList() {
     setFilteredEmployees(filtered);
   };
 
-  // Logout
   const handleLogout = () => {
     localStorage.removeItem('token');
     alert('Logged out successfully!');
@@ -75,7 +71,6 @@ function EmployeeList() {
 
   return (
     <Box sx={{ padding: '20px' }}>
-      {/* Header */}
       <Box
         sx={{
           display: 'flex',
@@ -107,7 +102,6 @@ function EmployeeList() {
         </Box>
       </Box>
 
-      {/* Search Filters */}
       <Box
         sx={{
           display: 'flex',
@@ -140,7 +134,6 @@ function EmployeeList() {
         </Button>
       </Box>
 
-      {/* Table */}
       <TableContainer component={Paper}>
         <Table>
           <TableHead>

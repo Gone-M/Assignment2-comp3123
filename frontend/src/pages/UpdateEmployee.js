@@ -20,7 +20,6 @@ function UpdateEmployee() {
     salary: '',
   });
 
-  // Çalışan bilgilerini backend'den al
   useEffect(() => {
     const fetchEmployee = async () => {
       try {
@@ -97,7 +96,7 @@ function UpdateEmployee() {
             >
               Update Employee
             </Button>
-            {/* Back to Employee List Button */}
+   
             <Button
               variant="contained"
               size="large"
@@ -105,10 +104,10 @@ function UpdateEmployee() {
               onClick={() => navigate('/employees')}
               sx={{
                 fontWeight: 'bold',
-                backgroundColor: '#000', // Siyah arka plan
-                color: '#fff', // Beyaz yazı rengi
+                backgroundColor: '#000',
+                color: '#fff',
                 '&:hover': {
-                  backgroundColor: '#333', // Hover durumunda gri ton
+                  backgroundColor: '#333',
                 },
               }}
             >

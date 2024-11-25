@@ -27,7 +27,7 @@ function AddEmployee() {
         salary,
       });
       alert('Employee added successfully!');
-      navigate('/employees'); // Çalışan listesine yönlendirme
+      navigate('/employees');
     } catch (error) {
       console.error('Error adding employee:', error);
       alert('Failed to add employee');
@@ -85,18 +85,17 @@ function AddEmployee() {
             >
               Add Employee
             </Button>
-            {/* Back to Employee List Button */}
             <Button
-              variant="contained" // Outlined yerine contained kullandık
+              variant="contained"
               size="large"
               fullWidth
               onClick={() => navigate('/employees')}
               sx={{
                 fontWeight: 'bold',
-                backgroundColor: '#000', // Arka plan siyah
-                color: '#fff', // Yazı rengi beyaz
+                backgroundColor: '#000',
+                color: '#fff',
                 '&:hover': {
-                  backgroundColor: '#333', // Hover durumunda biraz daha açık siyah
+                  backgroundColor: '#333',
                 },
               }}
             >
